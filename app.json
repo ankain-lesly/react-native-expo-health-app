@@ -1,12 +1,15 @@
 {
   "expo": {
-    "name": "Regular-UI2",
-    "slug": "Regular-UI2",
+    "name": "Expo Health App",
+    "slug": "expo-health-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "expo-health-app",
     "userInterfaceStyle": "automatic",
+    "router": {
+      "root": "App"
+    },
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
@@ -19,7 +22,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.devleemotion.expohealthapp"
     },
     "web": {
       "bundler": "metro",
@@ -30,7 +34,15 @@
       "expo-router"
     ],
     "experiments": {
-      "typedRoutes": true
+      "tsconfigPaths": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "a2eda1b8-c82a-4e98-95ac-b432886092d0"
+      }
     }
   }
 }
