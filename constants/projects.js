@@ -35,4 +35,65 @@ export const appProjectsLinks = [
     label: "Creating top tabs",
     isDone: false,
   },
+  // Dummy
+  {
+    path: "Dummy",
+    label: "Some dummy information about this data group",
+    isDone: false,
+  },
+  {
+    path: "Dummy",
+    label: "Some dummy information about this data group",
+    isDone: false,
+  },
+  {
+    path: "Dummy",
+    label: "Some dummy information about this data group",
+    isDone: false,
+  },
+  {
+    path: "Dummy",
+    label: "Some dummy information about this data group",
+    isDone: false,
+  },
+  {
+    path: "Dummy",
+    label: "Some dummy information about this data group",
+    isDone: false,
+  },
+  {
+    path: "Dummy",
+    label: "Some dummy information about this data group",
+    isDone: false,
+  },
+  {
+    path: "Dummy",
+    label: "Some dummy information about this data group",
+    isDone: false,
+  },
+  {
+    path: "Dummy",
+    label: "Some dummy information about this data group",
+    isDone: false,
+  },
+  {
+    path: "Dummy",
+    label: "Some dummy information about this data group",
+    isDone: false,
+  },
+  {
+    path: "Dummy",
+    label: "Some dummy information about this data group",
+    isDone: false,
+  },
+  {
+    path: "Dummy",
+    label: "Some dummy information about this data group",
+    isDone: false,
+  },
+  {
+    path: "Dummy",
+    label: "Some dummy information about this data group",
+    isDone: false,
+  },
 ];

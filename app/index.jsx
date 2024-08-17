@@ -8,13 +8,13 @@ SplashScreen.preventAutoHideAsync();
 const OnboardScreen = () => {
   const checkedUserLogged = async () => {
     const isLogged = await storage.getItem("isLogged");
-    CODE: console.log(isLogged, typeof isLogged);
+    // CODE: console.log(isLogged, typeof isLogged);
 
     if (isLogged != "true") {
-      console.log("ROUTE: ONBOARD");
+      // console.log("ROUTE: ONBOARD");
       router.replace("/onboarding");
     } else {
-      console.log("ROUTE: HOME");
+      // console.log("ROUTE: HOME");
       router.replace("/home");
     }
 

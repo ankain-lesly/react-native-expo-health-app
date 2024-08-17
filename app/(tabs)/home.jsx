@@ -1,4 +1,10 @@
-import { View, Text, TouchableOpacity, TextInput } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  TextInput,
+  ActivityIndicator,
+} from "react-native";
 import { router } from "expo-router";
 import Icons from "@expo/vector-icons/AntDesign";
 import { useEffect, useState } from "react";
@@ -24,31 +30,39 @@ export default Home = () => {
     }
   };
   useEffect(() => {
-    setProjects(appProjectsLinks);
+    setTimeout(() => {
+      setProjects(appProjectsLinks);
+    }, 500);
   }, []);
   return (
-    <ScreenWrapperScroll style="bg-slate-100">
+    <ScreenWrapperScroll scrollbar contextFlex style="bg-slate-100">
       <View className="py-10">
         <HeadComponent searchProject={searchProject} />
-        <View className="gap-4 pt-3">
-          {projects.map((link, i) => (
-            <TouchableOpacity
-              key={i}
-              // onPress={() => router.push(link.path)}
-              onPress={() => router.push("explore")}
-              className="w-full px-6">
-              <View className="flex-row items-center gap-4 pb-5">
-                <Icons name="antdesign" size={28} color={"black"} />
-                <View>
-                  <Text className="text-lg font-semibold">
-                    {i + 1} {link.path}
-                  </Text>
-                  <Text>{link.label}</Text>
+        {!projects.length ? (
+          <View className="gap-4 items-center justify-center pt-3">
+            <ActivityIndicator />
+          </View>
+        ) : (
+          <View className="gap-4 pt-3">
+            {projects.map((link, i) => (
+              <TouchableOpacity
+                key={i}
+                // onPress={() => router.push(link.path)}
+                onPress={() => router.push("explore")}
+                className="w-full px-6">
+                <View className="flex-row items-center gap-4 pb-5">
+                  <Icons name="antdesign" size={28} color={"black"} />
+                  <View className="flex-1">
+                    <Text className="text-lg font-semibold">
+                      {i + 1} {link.path}
+                    </Text>
+                    <Text>{link.label}</Text>
+                  </View>
                 </View>
-              </View>
-            </TouchableOpacity>
-          ))}
-        </View>
+              </TouchableOpacity>
+            ))}
+          </View>
+        )}
       </View>
     </ScreenWrapperScroll>
   );
@@ -59,7 +73,7 @@ const HeadComponent = ({ searchProject }) => {
   const handleTextChange = (e) => {
     setValue(e);
     searchProject(e);
-    console.log(e);
+    // console.log(e);
   };
   return (
     <View className="px-6">
@@ -75,7 +89,10 @@ const HeadComponent = ({ searchProject }) => {
           className="bg-white py-3 px-10 text-lg shadow-md flex-1 rounded-3xl"
         />
         <TouchableOpacity
-          onPress={() => setValue("")}
+          onPress={() => {
+            setValue("");
+            searchProject("");
+          }}
           className="absolute right-3">
           {/* <Icons name="times" size={24} color={"black"} /> */}
           {value && <Text className="">❌</Text>}

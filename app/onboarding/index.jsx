@@ -41,7 +41,7 @@ const onboarding = () => {
     } else console.log("End of slides");
   };
   return (
-    <ScreenWrapperScroll>
+    <ScreenWrapperScroll contextFlex>
       <View className="relative flex-1">
         {/* Slides */}
         <View className="flex-1">

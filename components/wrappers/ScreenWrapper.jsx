@@ -21,15 +21,16 @@ export const ScreenWrapper = ({ style, children, isStatusBar = true }) => {
 export const ScreenWrapperScroll = ({
   style,
   children,
+  contextFlex = false,
+  scrollbar = false,
   isStatusBar = true,
 }) => {
   return (
     <>
       <SafeAreaView className={`${style}`} style={{ flex: 1 }}>
         <ScrollView
-          contentContainerStyle={{
-            flex: 1,
-          }}>
+          showsVerticalScrollIndicator={scrollbar}
+          contentContainerStyle={contextFlex ? { flex: 1 } : {}}>
           {children}
         </ScrollView>
       </SafeAreaView>
@@ -46,15 +47,7 @@ export const ScreenWithKeyboardAvoiding = ({ style, children }) => {
       <KeyboardAvoidingView
         style={{ flex: 1 }}
         behavior={Platform.OS == "ios" ? "padding" : "height"}>
-        <ScrollView
-          contentContainerStyle={{
-            flex: 1,
-            // minHeight: "100%",
-            // justifyContent: center ? "center" : "flex-start",
-          }}
-          showsVerticalScrollIndicator={false}>
-          {children}
-        </ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>{children}</ScrollView>
       </KeyboardAvoidingView>
     </SafeAreaView>
   );
