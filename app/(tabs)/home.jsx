@@ -35,7 +35,7 @@ export default Home = () => {
     }, 500);
   }, []);
   return (
-    <ScreenWrapperScroll scrollbar contextFlex style="bg-slate-100">
+    <ScreenWrapperScroll scrollbar style="bg-slate-100">
       <View className="py-10">
         <HeadComponent searchProject={searchProject} />
         {!projects.length ? (
