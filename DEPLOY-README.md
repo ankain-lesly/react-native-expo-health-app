@@ -12,6 +12,8 @@ npm install -g eas-cli
 eas login
 ```
 
+Run command _eas whoami_ to check you are logged in or not.
+
 ## Step 3: Create a build
 
 ```shell
